@@ -11,7 +11,7 @@ namespace Common.Actions.Entities.ChangeRequest
             var tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
             IPluginExecutionContext context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
 
-            if (context.MessageName != "Update" || context.Stage != 20) return;
+            if (context.MessageName != "Create" || context.MessageName != "Update" || context.Stage != 20) return;
             if (context.Depth > 1) return; // guard recursion
             if (context.InputParameters.Contains("Target") && !(context.InputParameters["Target"] is Entity)) return;
 
@@ -49,3 +49,4 @@ namespace Common.Actions.Entities.ChangeRequest
         }
     }
 }
+
