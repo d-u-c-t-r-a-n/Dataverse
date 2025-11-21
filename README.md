@@ -6,4 +6,4 @@ This demo shows how to use a Dataverse plugin to enforce a simple data quality r
 
 > Do not allow double quotation marks (`"`) to be written to the database.
 
-The plugin runs on create and update, inspects incoming values, and blocks the operation if any targeted field contains a double quote.
+The plugin runs on create and update, inspects incoming values, and blocks the operation if any targeted field contains a double quote and replaces it with a single quote instead.
